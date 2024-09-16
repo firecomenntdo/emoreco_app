@@ -1,24 +1,46 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
+| Culumn            | Type    | Options                   |
+| ----------------- | ------- | ------------------------- |
+| email             | string  |  null: false,unique: true |
+| encrypted_password| string  |  null: false              |
 
-Things you may want to cover:
 
-* Ruby version
+### Association
+- has_many :positives
+- has_many :negatives
+- has_many :tags
 
-* System dependencies
 
-* Configuration
+## positivesテーブル
+| Culumn            | Type    | Options                   |
+| ----------------- | ------- | ------------------------- |
+| emotion_lv_id     | integer |  null: false              |
+| positive_context  | text    |                           |
+| tag_id            | integer |                           |
 
-* Database creation
+### Association
+- belongs_to :user
+- has_many :tags
 
-* Database initialization
+## negativesテーブル
+| Culumn            | Type    | Options                   |
+| ----------------- | ------- | ------------------------- |
+| emotion_lv_id     | integer |  null: false              |
+| negative_context  | text    |                           |
+| tag_id            | integer |                           |
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- has_many :tags
 
-* Services (job queues, cache servers, search engines, etc.)
+## tagsテーブル
+| Culumn            | Type    | Options                   |
+| ----------------- | ------- | ------------------------- |
+| name              | string  | null: false               |
 
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user
+- has_many :positives
+- has_many :negatives

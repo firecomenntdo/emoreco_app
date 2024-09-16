@@ -1,0 +1,73 @@
+[signin]
+ログインページ
+--
+ログインボタン
+==> happy
+新規登録ボタン
+==> new_registration
+
+[new_registration]
+新規登録画面
+メールアドレス
+パスワード
+--
+新規登録ボタン
+==> happy
+
+[setting]
+設定一覧
+--
+ログアウト
+==> signin
+全データ削除
+==> delete_all
+
+[happy]
+良いこと画面
+良いこと円グラフ
+--
+ネガティブページ
+==> negative
+タグ登録画面
+==> tag
+ポジティブ一覧画面
+==> positive_show
+設定
+==> setting
+
+[positive_show]
+ポジティブ投稿一覧
+タグで絞る
+ポジレベルで絞る
+投稿削除
+--
+==> happy
+
+
+[negative]
+嫌なこと画面
+嫌なことグラフ
+--
+ポジティブページ
+==> happy
+タグ登録画面
+==> tag
+ネガティブ一覧画面
+==> negative_show
+設定
+==> setting
+
+[negative_show]
+ネガティブ投稿一覧
+タグで絞る
+ネガレベルで絞る
+投稿削除
+--
+==> negative
+
+[tag]
+タグ登録
+タグ一覧
+--
+もどる
+==> happy
