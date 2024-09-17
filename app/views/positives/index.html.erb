@@ -1,1 +1,13 @@
-<h1>こんにちは</h1>
+<%= link_to 'ネガティブ', negatives_path, class: "header_link" %>
+<div class='positive_main'>
+  <h2>何かあった？</h2>
+  <div id></div>
+  <%= form_with model: @positive, local: true do |f| %>
+  <%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :name, {}, {class:"select-box", id:"positive"}) %>
+  <%= f.text_area :positive_context, class:"positive_context", id:"positive_context", placeholder:"あった出来事" %>
+  <%= f.submit "Record" ,class:"Record-btn" %>
+
+  <% end %>
+</div>
+
+<%= render "shared/footer" %>

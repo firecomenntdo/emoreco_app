@@ -19,6 +19,7 @@
 | emotion_lv_id     | integer |  null: false              |
 | positive_context  | text    |                           |
 | tag_id            | integer |                           |
+| user              |references | null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -30,6 +31,7 @@
 | emotion_lv_id     | integer |  null: false              |
 | negative_context  | text    |                           |
 | tag_id            | integer |                           |
+| user              |references | null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user

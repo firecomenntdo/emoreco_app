@@ -1,4 +1,4 @@
-class Positive < ApplicationRecord
+class Negative < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :emotion_lv
 
