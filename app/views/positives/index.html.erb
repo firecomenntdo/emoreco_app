@@ -1,5 +1,6 @@
 <%= link_to 'ネガティブ', negatives_path, class: "header_link" %>
 <div class='positive_main'>
+  <%= pie_chart @chart_data %>
   <h2>何かあった？</h2>
   <div id></div>
   <%= form_with model: @positive, local: true do |f| %>

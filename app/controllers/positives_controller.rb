@@ -2,6 +2,10 @@ class PositivesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   def index
     @positive = Positive.new
+    positive_counts = Positive.group(:emotion_lv_id).count
+    @chart_data = positive_counts.map do |key, value|
+      { name: EmotionLv.find(key).name, data: value }
+    end
   end
   def create
     @positive = Positive.new(positive_params)
