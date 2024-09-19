@@ -1,12 +1,16 @@
 class PositivesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   def index
-    @positive = Positive.new
-    positive_counts = Positive.group(:emotion_lv_id).count
-    @chart_data = positive_counts.map do |key, value|
-      { name: EmotionLv.find(key).name, data: value }
-    end
+    @new_positive = Positive.new
+    @positive = Positive.where('extract(year from positives.created_at) 
+= ? AND extract(month from positives.created_at) = ?', 
+Time.now.year, Time.now.month)
+
+@positive_ratio = @positive.joins("LEFT JOIN emotion_lvs ON emotion_lvs.id = positives.emotion_lv_id")
+.group("emotion_lvs.level").count
+
   end
+
   def create
     @positive = Positive.new(positive_params)
     if @positive.save

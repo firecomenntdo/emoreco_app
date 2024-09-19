@@ -77,4 +77,3 @@ end
 gem 'devise'
 gem 'active_hash'
 gem 'chartkick'
-gem 'groupdate'

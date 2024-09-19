@@ -1,7 +1,14 @@
 class NegativesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   def index
-    @negative = Negative.new
+    @new_negative = Negative.new
+    @negative = Negative.where('extract(year from negatives.created_at) 
+= ? AND extract(month from negatives.created_at) = ?', 
+Time.now.year, Time.now.month)
+
+@negative_ratio = @negative.joins("LEFT JOIN emotion_lvs ON emotion_lvs.id = negatives.emotion_lv_id")
+.group("emotion_lvs.level").count
+
   end
   def create
     @negative = Negative.new(negative_params)
