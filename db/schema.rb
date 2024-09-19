@@ -11,23 +11,31 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2024_09_17_073753) do
+  create_table "emotion_lvs", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "negatives", charset: "utf8mb4", force: :cascade do |t|
-    t.integer "emotion_lv_id", null: false
+    t.bigint "emotion_lv_id", null: false
     t.text "negative_context"
     t.integer "tag_id"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["emotion_lv_id"], name: "index_negatives_on_emotion_lv_id"
     t.index ["user_id"], name: "index_negatives_on_user_id"
   end
 
   create_table "positives", charset: "utf8mb4", force: :cascade do |t|
-    t.integer "emotion_lv_id", null: false
+    t.bigint "emotion_lv_id", null: false
     t.text "positive_context"
     t.integer "tag_id"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["emotion_lv_id"], name: "index_positives_on_emotion_lv_id"
     t.index ["user_id"], name: "index_positives_on_user_id"
   end
 
@@ -43,6 +51,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_17_073753) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "negatives", "emotion_lvs"
   add_foreign_key "negatives", "users"
+  add_foreign_key "positives", "emotion_lvs"
   add_foreign_key "positives", "users"
 end

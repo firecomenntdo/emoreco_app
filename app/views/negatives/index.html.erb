@@ -1,12 +1,12 @@
 <%= link_to 'ポジティブ', positives_path, class: "header_link" %>
 <div class='negative_main'>
+    <%= pie_chart @negative_ratio, width: "500px" %>
   <h2>何かあった？？ネガページ</h2>
   <div id></div>
-  <%= form_with model: @negative, local: true do |f| %>
-  <%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :name, {}, {class:"select-box", id:"negative"}) %>
+ <%= form_for @new_negative do |f| %>
+  <%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :level, {}, {class:"select-box", id:"negative"}) %>
   <%= f.text_area :negative_context, class:"negative_context", id:"negative_context", placeholder:"あった出来事" %>
   <%= f.submit "Record" ,class:"Record-btn" %>
-
   <% end %>
 </div>
 

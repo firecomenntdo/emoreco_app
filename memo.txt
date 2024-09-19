@@ -1,0 +1,13 @@
+@variable_costs = VariableCost.where('extract(year from start_time) 
+= ? AND extract(month from start_time) = ?', 
+Time.now.year, Time.now.month)
+
+@variable_ratio = @variable_costs.joins(:varicate)
+.group("varicates.name").sum(:price).sort_by { |_, v| v }.reverse.to_h
+
+@positive = Positive.where('extract(year from created_at) 
+= ? AND extract(month from created_at) = ?', 
+Time.now.year, Time.now.month)
+
+@positive_ratio = @positive.joins(:emotion_lv)
+.group("emotion_lv.num").sum(:num).sort_by { |_, v| v }.reverse.to_h
