@@ -1,4 +1,10 @@
 <h1>ネガティヴ一覧画面</h1>
 <% @negatives.each do |negative| %>
-<%= render partial: 'negatives/negative', locals: {negative: negative} %>
+<%= negative.emotion_lv_id %>
+<%= negative.negative_context %>
+<%= negative.created_at %>
+<%= negative.user_id %>
+<br>
 <% end %>
+
+<%= link_to 'もどる', negatives_path, class: "header_link" %>

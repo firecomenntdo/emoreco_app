@@ -1,7 +1,7 @@
 <%= link_to 'ネガティブ', negatives_path, class: "header_link" %>
 <div class='positive_main'>
    <% if @positive_ratio.present? %>
-    <%= pie_chart @positive_ratio, width: "500px" %>
+    <%= pie_chart @positive_ratio, width: "500px" ,colors: ["#f5604c", "#f79183", "#e69867", "#edbb7e"] %>
   <% else %>
     <p>記録してみよう！</p>
   <% end %>

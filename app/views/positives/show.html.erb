@@ -1,1 +1,10 @@
 <h1>ポジティブ一覧</h1>
+<% @positives.each do |positive| %>
+<%= positive.emotion_lv_id %>
+<%= positive.positive_context %>
+<%= positive.created_at %>
+<%= positive.user_id %>
+<br>
+<% end %>
+
+<%= link_to 'もどる', positives_path, class: "header_link" %>

@@ -19,6 +19,7 @@ Time.now.year, Time.now.month)
     end
   end
   def show
+    @negatives = current_user.negatives.all
   end
   private
   def negative_params

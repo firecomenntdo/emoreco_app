@@ -20,7 +20,7 @@ Time.now.year, Time.now.month)
     end
   end
   def show
-    
+    @positives = current_user.positives.all
   end
   private
   def positive_params
