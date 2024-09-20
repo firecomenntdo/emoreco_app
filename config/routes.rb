@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'positives#index'
-  resources :positives, only: [:index, :create]
-  resources :negatives, only: [:index, :create]
-  
-
+  resources :positives, :negatives, only: [:index, :create, :show]
 end

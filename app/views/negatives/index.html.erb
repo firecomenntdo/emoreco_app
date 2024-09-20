@@ -1,6 +1,7 @@
 <%= link_to 'ポジティブ', positives_path, class: "header_link" %>
 <div class='negative_main'>
     <%= pie_chart @negative_ratio, width: "500px" %>
+
   <h2>何かあった？？ネガページ</h2>
   <div id></div>
  <%= form_for @new_negative do |f| %>
@@ -9,5 +10,5 @@
   <%= f.submit "Record" ,class:"Record-btn" %>
   <% end %>
 </div>
-
+<%= link_to 'ネガティヴ投稿一覧', "negatives/#{current_user.id}", class: "header_link" %>
 <%= render "shared/footer" %>

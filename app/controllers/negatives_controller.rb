@@ -2,7 +2,7 @@ class NegativesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   def index
     @new_negative = Negative.new
-    @negative = Negative.where('extract(year from negatives.created_at) 
+    @negative = current_user.negatives.where('extract(year from negatives.created_at) 
 = ? AND extract(month from negatives.created_at) = ?', 
 Time.now.year, Time.now.month)
 
@@ -18,7 +18,9 @@ Time.now.year, Time.now.month)
       render :index, status: :unprocessable_entity
     end
   end
-
+  def show
+    @negatives = current_user.negatives.all
+  end
   private
   def negative_params
     params.require(:negative).permit(:emotion_lv_id,:negative_context).merge(user_id: current_user.id)
