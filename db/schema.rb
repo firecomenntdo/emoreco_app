@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_09_17_073753) do
+ActiveRecord::Schema[7.0].define(version: 2024_09_23_090723) do
   create_table "emotion_lvs", charset: "utf8mb4", force: :cascade do |t|
     t.integer "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "negative_tag_relations", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "negative_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["negative_id"], name: "index_negative_tag_relations_on_negative_id"
+    t.index ["tag_id"], name: "index_negative_tag_relations_on_tag_id"
   end
 
   create_table "negatives", charset: "utf8mb4", force: :cascade do |t|
@@ -28,6 +37,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_17_073753) do
     t.index ["user_id"], name: "index_negatives_on_user_id"
   end
 
+  create_table "positive_tag_relations", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "positive_id", null: false
+    t.bigint "tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["positive_id"], name: "index_positive_tag_relations_on_positive_id"
+    t.index ["tag_id"], name: "index_positive_tag_relations_on_tag_id"
+  end
+
   create_table "positives", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "emotion_lv_id", null: false
     t.text "positive_context"
@@ -37,6 +55,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_17_073753) do
     t.datetime "updated_at", null: false
     t.index ["emotion_lv_id"], name: "index_positives_on_emotion_lv_id"
     t.index ["user_id"], name: "index_positives_on_user_id"
+  end
+
+  create_table "tags", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
@@ -53,6 +78,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_17_073753) do
 
   add_foreign_key "negatives", "emotion_lvs"
   add_foreign_key "negatives", "users"
+  add_foreign_key "positive_tag_relations", "positives"
+  add_foreign_key "positive_tag_relations", "tags"
   add_foreign_key "positives", "emotion_lvs"
   add_foreign_key "positives", "users"
 end

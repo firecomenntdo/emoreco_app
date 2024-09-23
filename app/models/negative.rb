@@ -1,8 +1,5 @@
 class Negative < ApplicationRecord
-  # extend ActiveHash::Associations::ActiveRecordExtensions
-  # belongs_to :emotion_lv
-
-  # validates :emotion_lv_id, numericality: { other_than: 1, message: "can't be blank" } 
   belongs_to :user
   belongs_to :emotion_lv
+  has_many :tags, through: :negative_tag_relations
 end

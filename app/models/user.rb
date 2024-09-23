@@ -8,4 +8,5 @@ class User < ApplicationRecord
 
   has_many :positives
   has_many :negatives
+  has_many :tags
 end
