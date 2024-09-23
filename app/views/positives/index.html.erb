@@ -7,11 +7,16 @@
   <% end %>
   <h2>何かあった？</h2>
   <div id></div>
- <%= form_for @new_positive do |f| %>
-  <%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :level, {}, {class:"select-box", id:"positive"}) %>
-  <%= f.text_area :positive_context, class:"positive_context", id:"positive_context", placeholder:"あった出来事" %>
-  <%= f.submit "Record" ,class:"Record-btn" %>
+<%= form_for @new_positive do |f| %>
+  <%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :level, {}, { class: "select-box", id: "positive" }) %>
+  <%= f.text_area :positive_context, class: "positive_context", id: "positive_context", placeholder: "あった出来事" %>
+  <%= f.text_field :tags, placeholder: "タグ" %>
+  <%= f.submit "Record", class: "Record-btn" %>
 <% end %>
+
+
 </div>
 <%= link_to 'ポジティブ投稿一覧', "positives/#{current_user.id}", class: "header_link" %>
 <%= render "shared/footer" %>
+
+
