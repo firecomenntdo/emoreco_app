@@ -3,7 +3,7 @@
 <%= positive.emotion_lv_id %>
 <%= positive.positive_context %>
 <%= positive.created_at %>
-<%= positive.user_id %>
+<%= positive.tags.map(&:name).join(', ') %>
 <br>
 <% end %>
 

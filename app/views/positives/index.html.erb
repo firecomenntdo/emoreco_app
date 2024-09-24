@@ -1,22 +1,25 @@
-<%= link_to 'ネガティブ', negatives_path, class: "header_link" %>
-<div class='positive_main'>
-   <% if @positive_ratio.present? %>
-    <%= pie_chart @positive_ratio, width: "500px" ,colors: ["#ffe5e5", "#ffcccc", "#ffb2b2", "#ff9999", "#ff6565"] %>
-  <% else %>
-    <p>記録してみよう！</p>
-  <% end %>
-  <h2>何かあった？</h2>
-  <div id></div>
-<%= form_for @new_positive do |f| %>
-  <%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :level, {}, { class: "select-box", id: "positive" }) %>
-  <%= f.text_area :positive_context, class: "positive_context", id: "positive_context", placeholder: "あった出来事" %>
-  <%= f.text_field :tags, value: @new_positive.tags.map(&:name).join(','), placeholder: "タグをカンマで区切って入力" %>
-  <%= f.submit "Record", class: "Record-btn" %>
-<% end %>
-
-
+<div class="main">
+  <%= link_to 'ネガティブ', negatives_path, class: "header_link" %>
+  <div class='positive_main'>
+      <% if @positive_ratio.present? %>
+        <%= pie_chart @positive_ratio, width: "500px" ,colors: ["#fcdcdc", "#facfcf", "#fac3c3", "#fcbbbb", "#fca9a9", "#fc7c7c", "#fc6a6a", "#fc5b5b", "#f74545", "#fa3c3c"] %>
+      <% else %>
+        <p>心地よかったことを記録してみよう</p>
+      <% end %>
+      <h2>何かあった？</h2>
+    <div class="form">
+      <%= form_for @new_positive do |f| %>
+        <%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :level, {}, { class: "select-box", id: "positive" }) %>
+        <%= f.text_area :positive_context, class: "positive_context", id: "positive_context", placeholder: "あった出来事" %>
+        <%= f.text_field :tags, value: @new_positive.tags.map(&:name).join(','), placeholder: "タグをカンマで区切って入力" %>
+        <%= f.submit "Record", class: "Record-btn" %>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to 'ポジティブ投稿一覧', "positives/#{current_user.id}", class: "header_link" %>
 </div>
-<%= link_to 'ポジティブ投稿一覧', "positives/#{current_user.id}", class: "header_link" %>
-<%= render "shared/footer" %>
+ <%= render "shared/footer" %>
+
+
 
 
