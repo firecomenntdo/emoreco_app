@@ -12,7 +12,9 @@ Time.now.year, Time.now.month)
   end
   def create
     @negative = Negative.new(negative_params)
+    tag_list = params[:negative][:tags].split(/[、,\s]/)
     if @negative.save
+      @negative.save_tag(tag_list)
       redirect_to negatives_path
     else
       render :index, status: :unprocessable_entity

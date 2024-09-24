@@ -7,6 +7,7 @@
  <%= form_for @new_negative do |f| %>
   <%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :level, {}, {class:"select-box", id:"negative"}) %>
   <%= f.text_area :negative_context, class:"negative_context", id:"negative_context", placeholder:"あった出来事" %>
+   <%= f.text_field :tags, value: @new_negative.tags.map(&:name).join(','), placeholder: "タグをカンマで区切って入力" %>
   <%= f.submit "Record" ,class:"Record-btn" %>
   <% end %>
 </div>
