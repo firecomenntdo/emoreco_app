@@ -10,7 +10,7 @@
 <%= form_for @new_positive do |f| %>
   <%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :level, {}, { class: "select-box", id: "positive" }) %>
   <%= f.text_area :positive_context, class: "positive_context", id: "positive_context", placeholder: "あった出来事" %>
-  <%= f.text_field :tags, placeholder: "タグ" %>
+  <%= f.text_field :tags, value: @new_positive.tags.map(&:name).join(','), placeholder: "タグをカンマで区切って入力" %>
   <%= f.submit "Record", class: "Record-btn" %>
 <% end %>
 

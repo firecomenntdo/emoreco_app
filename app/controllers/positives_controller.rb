@@ -1,5 +1,5 @@
 class PositivesController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :create]
+  before_action :authenticate_user!, only: [:index, :create, :show]
   def index
     @new_positive = Positive.new
     @positive = current_user.positives.where('extract(year from positives.created_at) 
@@ -14,7 +14,7 @@ class PositivesController < ApplicationController
     @positive = Positive.new(positive_params)
     tag_list = params[:positive][:tags].split(/[、,\s]/) # Splitting by Japanese comma or whitespace
     if @positive.save
-      @positive.save_tags(tag_list)
+      @positive.save_tag(tag_list)
       redirect_to positives_path
     else
       render :index, status: :unprocessable_entity

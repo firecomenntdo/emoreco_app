@@ -17,7 +17,7 @@ class Positive < ApplicationRecord
     end
 
     new_tags.each do |new|
-      new_post_tag = Tag.find_or_create_by(name: new)
+      new_post_tag = Tag.find_or_create_by(name: new, user_id: user_id)
       self.tags << new_post_tag
    end
   end
