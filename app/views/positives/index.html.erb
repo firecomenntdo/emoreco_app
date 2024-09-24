@@ -1,17 +1,22 @@
 <%= link_to 'ネガティブ', negatives_path, class: "header_link" %>
 <div class='positive_main'>
    <% if @positive_ratio.present? %>
-    <%= pie_chart @positive_ratio, width: "500px" ,colors: ["#f5604c", "#f79183", "#e69867", "#edbb7e"] %>
+    <%= pie_chart @positive_ratio, width: "500px" ,colors: ["#ffe5e5", "#ffcccc", "#ffb2b2", "#ff9999", "#ff6565"] %>
   <% else %>
     <p>記録してみよう！</p>
   <% end %>
   <h2>何かあった？</h2>
   <div id></div>
- <%= form_for @new_positive do |f| %>
-  <%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :level, {}, {class:"select-box", id:"positive"}) %>
-  <%= f.text_area :positive_context, class:"positive_context", id:"positive_context", placeholder:"あった出来事" %>
-  <%= f.submit "Record" ,class:"Record-btn" %>
+<%= form_for @new_positive do |f| %>
+  <%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :level, {}, { class: "select-box", id: "positive" }) %>
+  <%= f.text_area :positive_context, class: "positive_context", id: "positive_context", placeholder: "あった出来事" %>
+  <%= f.text_field :tags, value: @new_positive.tags.map(&:name).join(','), placeholder: "タグをカンマで区切って入力" %>
+  <%= f.submit "Record", class: "Record-btn" %>
 <% end %>
+
+
 </div>
 <%= link_to 'ポジティブ投稿一覧', "positives/#{current_user.id}", class: "header_link" %>
 <%= render "shared/footer" %>
+
+

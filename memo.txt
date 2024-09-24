@@ -16,3 +16,9 @@ Time.now.year, Time.now.month)
 ログイン後、他ユーザーが登録した情報も表示されてしまう
 ログイン後に各ユーザーのpositiveページに遷移させたい。
 他アプリでどこを参考にするか
+
+0920
+したいこと
+・投稿時に複数タグを登録できるようにしたい
+・posi/negativeのshow.htmlにemotion_lvごとに投稿を表示させるようにしたい
+・posi/negativeのshow.htmlでタグごとに投稿を表示
