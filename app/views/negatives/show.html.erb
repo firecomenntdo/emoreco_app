@@ -4,6 +4,7 @@
 <%= negative.negative_context %>
 <%= negative.created_at %>
 <%= negative.user_id %>
+<%= negative.tags.map(&:name).join(', ') %>
 <br>
 <% end %>
 

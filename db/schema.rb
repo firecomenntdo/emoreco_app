@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_09_23_090723) do
+ActiveRecord::Schema[7.0].define(version: 2024_09_24_133906) do
   create_table "emotion_lvs", charset: "utf8mb4", force: :cascade do |t|
     t.integer "level"
     t.datetime "created_at", null: false
@@ -62,7 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_23_090723) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_tags_on_name", unique: true
+    t.index ["name", "user_id"], name: "index_tags_on_name_and_user_id", unique: true
     t.index ["user_id"], name: "index_tags_on_user_id"
   end
 

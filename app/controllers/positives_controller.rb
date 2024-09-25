@@ -14,7 +14,7 @@ class PositivesController < ApplicationController
     @positive = Positive.new(positive_params)
     tag_list = params[:positive][:tags].split(/[、,\s]/) # Splitting by Japanese comma or whitespace
     if @positive.save
-      @positive.save_tag(tag_list)
+      @positive.save_tag(tag_list, current_user.id)
       redirect_to positives_path
     else
       render :index, status: :unprocessable_entity
@@ -22,6 +22,7 @@ class PositivesController < ApplicationController
   end
   def show
     @positives = current_user.positives.all
+    @tag_list = Tag.all
   end
 
 
