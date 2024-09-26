@@ -24,17 +24,41 @@
   flex-direction: column;
   justify-content: center;
 }
+.sign_title_content {
+  margin: auto;
+  text-align: center;
+}
 .emorecord_title {
   font-family: "Delius Unicase", cursive;
   font-weight: 700;
   font-style: normal;
   font-size: 35px;
+  margin: auto;
 }
 
 .message{
   font-family: "Asap", sans-serif;
   font-optical-sizing: auto;
   font-size: 25px;
+  margin: auto;
+}
+
+.input-default {
+  height: 35px;
+  width: 200px;
+  border-radius: 5px;
+  border: solid,1px, rgb(190, 186, 186);
+}
+
+.sub_btn {
+  background-color: rgb(240, 215, 105);
+  color: rgb(255, 255, 255);
+  font-size: 19px;
+  font-weight: 600;
+  height: 40px;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
 }
 /************************ positive ******************************
 *****************************************************************/
