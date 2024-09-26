@@ -1,21 +1,21 @@
-<div class='main'>
+<div class='negative_main'>
   <%= link_to 'ポジティブ', positives_path, class: "header_link" %>
-  <div class="negative_main">
+  <div class="negative_contents">
     <% if @negative_ratio.present? %>
-      <%= pie_chart @negative_ratio, width: "500px" %>
+      <%= pie_chart @negative_ratio, width: "500px",colors: ["#a5b3cc", "#93a7c9",  "#879fc9", "#7d99c9", "#698cc7", "#5f82c7", "#4f78c9", "#406ec9", "#3466c9", "#224fa8",] %>
     <% else %>
-      <p>辛かったことを記録してみよう</p>
+      <%= image_tag "初期犬.png", class:"first_dog" %>
     <% end %>
     <h2>何かあった？</h2>
     <div class="form">
       <%= form_for @new_negative do |f| %>
-      <%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :level, {}, {class:"select-box", id:"negative"}) %>
-      <%= f.text_area :negative_context, class:"negative_context", id:"negative_context", placeholder:"あった出来事" %>
-      <%= f.text_field :tags, value: @new_negative.tags.map(&:name).join(','), placeholder: "タグをカンマで区切って入力" %>
+      😢Lv:<%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :level, {}, {class:"select-box", id:"negative"}) %><br>
+      <%= f.text_area :negative_context, class:"context", id:"negative_context", placeholder:"あった出来事" %><br>
+      <%= f.text_field :tags, class: "tags", value: @new_negative.tags.map(&:name).join(','), placeholder: "タグをカンマで区切って入力" %><br>
       <%= f.submit "Record" ,class:"Record-btn" %>
       <% end %>
     </div>
   </div>
   <%= link_to 'ネガティヴ投稿一覧', "negatives/#{current_user.id}", class: "header_link" %>
+  <%= render "shared/footer" %>
 </div>
-<%= render "shared/footer" %>

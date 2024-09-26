@@ -1,0 +1,82 @@
+/************************ 共通 ******************************
+*****************************************************************/
+
+.form {
+}
+.context {
+  width: 300px;
+  height: 50px;
+}
+.tags {
+  height: 20px;
+  width: 300px;
+}
+.first_dog {
+  width: 300px;
+  background-position: center;
+}
+/************************ ログイン、新規登録 ******************************
+*****************************************************************/
+.sign_main {
+  height: auto;
+  background-color: rgb(255, 255, 238);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.emorecord_title {
+  font-family: "Delius Unicase", cursive;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 35px;
+}
+
+.message{
+  font-family: "Asap", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 25px;
+}
+/************************ positive ******************************
+*****************************************************************/
+/* index */
+.positive_main {
+  height: 100vh;
+  background-color: rgb(248, 236, 225);
+}
+
+.form {
+}
+
+/* show */
+.positive_show_main {
+  height: 100vh;
+  background-color: rgb(248, 236, 225);
+  display: flex;
+}
+
+.posi_lv {
+  font-size: 10px;
+}
+/************************ negative ******************************
+*****************************************************************/
+/* index */
+.negative_main {
+  height: 100vh;
+  background-color: rgb(228, 229, 237);
+}
+
+/* show */
+.negative_show_main {
+  height: 100vh;
+  background-color: rgb(228, 229, 237);
+  display: flex;
+}
+
+
+
+
+
+/* スマホ表示時 */
+@media (max-width: 599px) {
+  
+}
