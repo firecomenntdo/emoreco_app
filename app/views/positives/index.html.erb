@@ -1,23 +1,21 @@
 <div class="positive_main">
-  <%= link_to 'ネガティブ', negatives_path, class: "header_link" %>
   <div class='positive_contents'>
-      <% if @positive_ratio.present? %>
-        <%= pie_chart @positive_ratio, width: "500px" ,colors: ["#fcdcdc", "#facfcf", "#fac3c3", "#fcbbbb", "#fca9a9", "#fc7c7c", "#fc6a6a", "#fc5b5b", "#f74545", "#fa3c3c"] %>
-      <% else %>
-        <%= image_tag "初期犬.png", class:"first_dog" %>
-      <% end %>
-      <h2>何かあった？</h2>
-    <div class="form">
-      <%= form_for @new_positive do |f| %>
-        ☺️Lv:<%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :level, {}, { class: "select-box", id: "positive" }) %><br>
-        <%= f.text_area :positive_context, class: "context", id: "positive_context", placeholder: "あった出来事" %><br>
-        <%= f.text_field :tags, class: "tags", value: @new_positive.tags.map(&:name).join(','), placeholder: "タグをカンマで区切って入力" %><br>
-        <%= f.submit "Record", class: "Record-btn" %>
-      <% end %>
-    </div>
+    <%= link_to 'ネガティブ', negatives_path, class: "header_link" %>
+        <% if @positive_ratio.present? %>
+          <%= pie_chart @positive_ratio, width: "500px" ,colors: ["#fcdcdc", "#facfcf", "#fac3c3", "#fcbbbb", "#fca9a9", "#fc7c7c", "#fc6a6a", "#fc5b5b", "#f74545", "#fa3c3c"] %>
+        <% else %>
+          <%= image_tag "初期犬.png", class:"first_dog" %>
+        <% end %>
+        <h2 class="question">何かあった？</h2>
+        <%= form_for @new_positive do |f| %>
+          <div class="form">☺️Lv:<%= f.collection_select(:emotion_lv_id, EmotionLv.all, :id, :level, {}, { class: "select-box", id: "positive" }) %></div>
+          <div class="form"><%= f.text_area :positive_context, class: "context", id: "positive_context", placeholder: "あった出来事" %></div>
+          <div class="form"><%= f.text_field :tags, class: "tags", value: @new_positive.tags.map(&:name).join(','), placeholder: "タグをカンマで区切って入力" %></div>
+          <div class="form"><%= f.submit "Record", class: "Record-btn-p" %></div>
+        <% end %>
+     <%= link_to 'ポジティブ投稿一覧', "positives/#{current_user.id}", class: "header_link" %>
+     <%= render "shared/footer" %>
   </div>
-  <%= link_to 'ポジティブ投稿一覧', "positives/#{current_user.id}", class: "header_link" %>
-  <%= render "shared/footer" %>
 </div>
 
 

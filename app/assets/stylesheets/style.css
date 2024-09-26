@@ -1,20 +1,22 @@
 /************************ 共通 ******************************
 *****************************************************************/
-
-.form {
-}
 .context {
   width: 300px;
   height: 50px;
 }
 .tags {
-  height: 20px;
+  height: 35px;
   width: 300px;
 }
 .first_dog {
   width: 300px;
   background-position: center;
 }
+
+.question {
+  text-align: center;
+}
+
 /************************ ログイン、新規登録 ******************************
 *****************************************************************/
 .sign_main {
@@ -34,6 +36,7 @@
   font-style: normal;
   font-size: 35px;
   margin: auto;
+  color: rgb(207, 97, 18);
 }
 
 .message{
@@ -41,6 +44,11 @@
   font-optical-sizing: auto;
   font-size: 25px;
   margin: auto;
+  color: rgb(63, 63, 63);
+}
+
+.login_signin {
+  color: rgb(63, 63, 63);
 }
 
 .input-default {
@@ -66,9 +74,27 @@
 .positive_main {
   height: 100vh;
   background-color: rgb(248, 236, 225);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.form {
+.positive_contents {
+  margin: auto;
+}
+
+.form{
+  text-align: center;
+}
+
+.Record-btn-p {
+  height: 30px;
+  width: 150px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(183, 66, 66);
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
 }
 
 /* show */
@@ -87,6 +113,23 @@
 .negative_main {
   height: 100vh;
   background-color: rgb(228, 229, 237);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.negative_contents {
+  margin: auto;
+}
+
+.Record-btn-n{
+  height: 30px;
+  width: 150px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(52, 92, 130);
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
 }
 
 /* show */
