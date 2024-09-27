@@ -1,0 +1,32 @@
+/************************ negative ******************************
+*****************************************************************/
+/* index */
+.negative_main {
+  height: 100vh;
+  background-color: rgb(228, 229, 237);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.negative_contents {
+  margin: auto;
+}
+
+.Record-btn-n{
+  height: 30px;
+  width: 150px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(52, 92, 130);
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+/* show */
+.negative_show_main {
+  height: 100vh;
+  background-color: rgb(228, 229, 237);
+  display: flex;
+}
+

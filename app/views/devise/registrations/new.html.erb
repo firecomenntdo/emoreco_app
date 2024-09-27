@@ -1,7 +1,13 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="sign_main">
+  <div class="sign_title_content">
+      <h1 class="emorecord_title">EMORECORD</h1>
+      <p class="message">How did you feel today?</p>
+      <p>良かったこと、嫌だったこと、記録しておこう</p>
+      <%= image_tag "新規登録犬.png", class:"first_dog" %>
+  </div>
+  <h2 class="login_signin">新規登録</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -24,6 +30,9 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
-<% end %>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+
+</div>
+

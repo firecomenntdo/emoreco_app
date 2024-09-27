@@ -1,3 +1,18 @@
+# アプリケーション名
+Emorecord
+
+# アプリ概要
+- ネガティブとポジティブの感情を記録できる。
+
+## アプリ機能
+- 記録する際に感情の強さを1~10まで選択できる。
+- 複数タグを同時に登録できる。
+- 記録はポジティブ/ネガティブ画面の詳細画面から確認できる。
+
+# URL
+
+
+
 # テーブル設計
 
 ## usersテーブル
@@ -18,7 +33,6 @@
 | ----------------- | ------- | ------------------------- |
 | emotion_lv_id     | integer |  null: false              |
 | positive_context  | text    |                           |
-| tag_id            | integer |                           |
 | user              |references | null: false, foreign_key: true|
 
 ### Association
@@ -31,7 +45,6 @@
 | ----------------- | ------- | ------------------------- |
 | emotion_lv_id     | integer |  null: false              |
 | negative_context  | text    |                           |
-| tag_id            | integer |                           |
 | user              |references| null: false, foreign_key: true|
 
 ### Association

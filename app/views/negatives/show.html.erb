@@ -1,11 +1,14 @@
-<h1>ネガティヴ一覧画面</h1>
-<% @negatives.each do |negative| %>
-<%= negative.emotion_lv_id %>
-<%= negative.negative_context %>
-<%= negative.created_at %>
-<%= negative.user_id %>
-<%= negative.tags.map(&:name).join(', ') %>
-<br>
-<% end %>
-
-<%= link_to 'もどる', negatives_path, class: "header_link" %>
+<div class="negative_show_main">
+  <div class="negative_show_contents">
+    <h1>ネガティヴ投稿一覧画面</h1>
+    <% @negatives.each do |negative| %>
+      😢Lv:<%= negative.emotion_lv_id %>
+      <%= negative.negative_context %>
+      <%= negative.created_at %>
+      <%= negative.user_id %>
+      🌠tag:<%= negative.tags.map(&:name).join(', ') %>
+      <br>
+    <% end %>
+    <%= link_to 'もどる', negatives_path, class: "header_link" %>
+  </div>
+</div>

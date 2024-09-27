@@ -29,7 +29,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_24_133906) do
   create_table "negatives", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "emotion_lv_id", null: false
     t.text "negative_context"
-    t.integer "tag_id"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -49,7 +48,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_24_133906) do
   create_table "positives", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "emotion_lv_id", null: false
     t.text "positive_context"
-    t.integer "tag_id"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
