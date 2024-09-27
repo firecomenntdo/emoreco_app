@@ -3,7 +3,6 @@ class CreatePositives < ActiveRecord::Migration[7.0]
     create_table :positives do |t|
       t.references :emotion_lv,         null:false,foreign_key: true
       t.text    :positive_context
-      t.integer :tag_id
       t.references :user,              null: false, foreign_key: true
 
       t.timestamps
