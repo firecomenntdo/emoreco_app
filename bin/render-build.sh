@@ -8,4 +8,5 @@ bundle exec rake assets:clean
 bundle exec rake db:migrate
 
 # Restore the MySQL database from backup
-mysql -u root -p$MYSQL_PASSWORD  emoreco_app_development < backup.sql
+# 環境変数を使用してpsqlコマンドを実行
+psql -h $DB_HOST -U $DB_USER -d $DB_NAME -f backup.sql
