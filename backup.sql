@@ -115,7 +115,7 @@ CREATE TABLE `negatives` (
   KEY `index_negatives_on_user_id` (`user_id`),
   CONSTRAINT `fk_rails_349bd9e84a` FOREIGN KEY (`emotion_lv_id`) REFERENCES `emotion_lvs` (`id`),
   CONSTRAINT `fk_rails_92782a8132` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -282,4 +282,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-09-27 23:33:11
+-- Dump completed on 2024-09-28  0:02:50
