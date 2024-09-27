@@ -1,7 +1,10 @@
 <div class='negative_main'>
   <div class="negative_contents">
-    <%= link_to 'ポジティブ', positives_path, class: "header_link" %>
-    <div class="negative_contents">
+    <div class = "header_menu">
+      <div class="header_link_positive"><%= link_to 'ポジティブ', positives_path, class: "header_link" %></div>
+      <div class="header_link_negative">ネガティブ</div>
+    </div>
+    <div class="negative_form">
       <% if @negative_ratio.present? %>
         <%= pie_chart @negative_ratio, width: "500px",colors: ["#a5b3cc", "#93a7c9",  "#879fc9", "#7d99c9", "#698cc7", "#5f82c7", "#4f78c9", "#406ec9", "#3466c9", "#224fa8",] %>
       <% else %>
