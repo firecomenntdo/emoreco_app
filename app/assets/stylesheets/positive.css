@@ -36,10 +36,3 @@
   font-size: 10px;
 }
 
-/* スマホ表示時 */
-@media (max-width: 375px) {
-  .body {
-    height: 100vh;
-    width: 375px;
-  }
-}
