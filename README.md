@@ -19,12 +19,14 @@ password: sample1
 # 利用方法
 ### 新規登録
 任意のemailとpasswordを登録します。
+
 <img src="https://github.com/user-attachments/assets/9b98fed5-b48c-4504-b04a-5be0a4886f15" height="500px">
 
 ### ポジティブとネガティブの感情を登録
 * 感情Lv(1~10)(必須)
 * 「あった出来事」記入(任意)
 * 「タグをカンマで区切って入力」記入(任意)
+* 
 <img src="https://github.com/user-attachments/assets/31a9fda0-681c-4878-91a9-8fa4cec2c659" height="500px">
 
 
