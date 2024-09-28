@@ -10,11 +10,17 @@ Emorecord
 - 記録はポジティブ/ネガティブ画面の詳細画面から確認できる。
 
 # URL
+https://emoreco-app.onrender.com
 
+### お試し用アカウント
+email: sample@sample
+password: sample1
 
+# 使い方
+### 新規登録
+任意のemailとpasswordを登録します。
 
 # テーブル設計
-
 ## usersテーブル
 | Culumn            | Type    | Options                   |
 | ----------------- | ------- | ------------------------- |

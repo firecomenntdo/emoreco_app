@@ -6,7 +6,7 @@ development:
   <<: *default
   adapter: mysql2
   username: root
-  password:
+  password: watagasikigo
   host: localhost
   database: emoreco_app_development
 
@@ -14,7 +14,7 @@ test:
   <<: *default
   adapter: mysql2
   username: root
-  password:
+  password: watagasikigo
   host: localhost
   database: emoreco_app_test
 
