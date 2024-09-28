@@ -10,9 +10,11 @@
 }
 
 .positive_contents {
-  margin: auto;
+  margin: 0 auto;
 }
+.positive_form{
 
+}
 .Record-btn-p {
   height: 30px;
   width: 150px;
@@ -32,4 +34,12 @@
 
 .posi_lv {
   font-size: 10px;
+}
+
+/* スマホ表示時 */
+@media (max-width: 375px) {
+  .body {
+    height: 100vh;
+    width: 375px;
+  }
 }

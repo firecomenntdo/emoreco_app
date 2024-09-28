@@ -1,16 +1,19 @@
 /************************ 共通 ******************************
 *****************************************************************/
-.context {
-  width: 300px;
-  height: 50px;
+.body {
+  height: 100vh;
+  width: 599px;
 }
 
 .header_menu {
+  width: 375px;
   display: flex;
   justify-content: center;
+  margin-top: 0;
 }
 
 .header_link_positive {
+  font-size: 18px;
   height: 45px;
   width: 100%;
   background-color: rgb(235, 129, 129);
@@ -19,11 +22,17 @@
 }
 
 .header_link_negative {
+  font-size: 18px;
   height: 45px;
   width: 100%;
   background-color: rgb(87, 149, 199);
   text-align: center;
   padding: 10px 10px;
+}
+
+.header_link{
+  font-size: 18px;
+  text-decoration: none;
 }
 .tags {
   height: 35px;
@@ -34,6 +43,10 @@
   background-position: center;
 }
 
+.context {
+  width: 300px;
+  height: 50px;
+}
 .question {
   text-align: center;
 }
@@ -93,6 +106,7 @@
   width: 200px;
   border: none;
   border-radius: 5px;
+  margin-top: 10px;
 }
 
 
