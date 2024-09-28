@@ -6,7 +6,7 @@
     </div>
     <div class="negative_form">
       <% if @negative_ratio.present? %>
-        <%= pie_chart @negative_ratio, width: "500px",colors: ["#a5b3cc", "#93a7c9",  "#879fc9", "#7d99c9", "#698cc7", "#5f82c7", "#4f78c9", "#406ec9", "#3466c9", "#224fa8",] %>
+        <%= pie_chart @negative_ratio, width: "320px",colors: ["#a5b3cc", "#93a7c9",  "#879fc9", "#7d99c9", "#698cc7", "#5f82c7", "#4f78c9", "#406ec9", "#3466c9", "#224fa8",] %>
       <% else %>
         <%= image_tag "初期犬.png", class:"first_dog" %>
       <% end %>
