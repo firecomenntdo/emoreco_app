@@ -29,8 +29,10 @@ password: sample1
 転職活動の自己分析をする際に、質問に答えられない事が多く、自分のことを理解していないことが分かった。感情を大きくポジティブとネガティブに分け、感情のレベルと内容をその場で登録し後で確認出来れば便利だと考え、アプリケーションを開発した。
 
 ## ER図
+![emorecoER](https://github.com/user-attachments/assets/6e3864f6-b7d9-49c2-8d5f-dbea30e19ae1)
 
 ## 画面遷移図
+<img width="1053" alt="emorecoseni" src="https://github.com/user-attachments/assets/dfa75ff0-de54-4c77-a05c-ca2afd274849">
 
 # テーブル設計
 ## usersテーブル
