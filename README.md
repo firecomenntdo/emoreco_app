@@ -19,13 +19,13 @@ password: sample1
 # 利用方法
 ### 新規登録
 任意のemailとpasswordを登録します。
-https://github.com/user-attachments/assets/6c5e67ed-6eeb-4fae-85a1-3c789cac8b83
+![emoreco_login](https://github.com/user-attachments/assets/9b98fed5-b48c-4504-b04a-5be0a4886f15)
 
 ### ポジティブとネガティブの感情を登録
 * 感情Lv(1~10)(必須)
 * 「あった出来事」記入(任意)
 * 「タグをカンマで区切って入力」記入(任意)
-https://github.com/user-attachments/assets/26e6e049-a2e8-4c4a-bdab-a60ddd77f958
+![emoreco_record](https://github.com/user-attachments/assets/31a9fda0-681c-4878-91a9-8fa4cec2c659)
 
 
 
