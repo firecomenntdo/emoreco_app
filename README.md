@@ -19,7 +19,7 @@ password: sample1
 # 利用方法
 ### 新規登録
 任意のemailとpasswordを登録します。
-![emoreco_login](https://github.com/user-attachments/assets/9b98fed5-b48c-4504-b04a-5be0a4886f15)
+<img src="https://github.com/user-attachments/assets/9b98fed5-b48c-4504-b04a-5be0a4886f15" width="500px">
 
 ### ポジティブとネガティブの感情を登録
 * 感情Lv(1~10)(必須)
