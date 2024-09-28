@@ -26,7 +26,7 @@ password: sample1
 * 感情Lv(1~10)(必須)
 * 「あった出来事」記入(任意)
 * 「タグをカンマで区切って入力」記入(任意)
-* 
+
 <img src="https://github.com/user-attachments/assets/31a9fda0-681c-4878-91a9-8fa4cec2c659" height="500px">
 
 
