@@ -24,7 +24,12 @@ class PositivesController < ApplicationController
     @positives = current_user.positives.all
     @tag_list = Tag.all
   end
-
+  
+  def search 
+    return nil if params[:keyword] == ""
+    tag = Tag.where(['tag_name LIKE ?', "%#{params[:keyword]}%"] )
+    render json:{ keyword: tag }
+  end
 
   private
   def positive_params
