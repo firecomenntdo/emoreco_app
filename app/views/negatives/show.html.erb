@@ -1,5 +1,6 @@
 <div class="negative_show_main">
   <div class="negative_show_contents">
+    <%= pie_chart @negative_ratio, width: "320px",colors: ["#a5b3cc", "#93a7c9",  "#879fc9", "#7d99c9", "#698cc7", "#5f82c7", "#4f78c9", "#406ec9", "#3466c9", "#224fa8",] %>
     <h1>ネガティヴ投稿一覧画面</h1>
     <% @negatives.each do |negative| %>
       😢Lv:<%= negative.emotion_lv_id %>
@@ -7,7 +8,7 @@
       <%= negative.created_at %>
       <%= negative.user_id %>
       🌠tag:<%= negative.tags.map(&:name).join(', ') %>
-      <br>
+      <%= link_to '削除', negative_path(negative.id), data: { turbo_method: :delete } %><br>
     <% end %>
     <%= link_to 'もどる', negatives_path, class: "header_link" %>
   </div>
