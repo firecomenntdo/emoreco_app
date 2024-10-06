@@ -34,8 +34,7 @@ class PositivesController < ApplicationController
     = ? AND extract(month from positives.created_at) = ?', 
     Time.now.year, Time.now.month)
 
-    @positive_ratio = @positive.joins("LEFT JOIN emotion_lvs ON emotion_lvs.id = positives.emotion_lv_id")
-    .group("emotion_lvs.level").count
+    @emotion_lv_ids = EmotionLv
   end
 
   private
