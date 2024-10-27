@@ -9,12 +9,6 @@ Emorecord
 - 複数タグを同時に登録できる。
 - 記録はポジティブ/ネガティブ画面の詳細画面から確認できる。
 
-# URL
-https://emoreco-app.onrender.com
-
-### お試し用アカウント
-email: sample@sample
-password: sample1
 
 # 利用方法
 ### 新規登録
