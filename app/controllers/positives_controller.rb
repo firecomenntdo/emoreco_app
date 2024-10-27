@@ -37,7 +37,6 @@ class PositivesController < ApplicationController
     @positive_ratio = @positive.joins("LEFT JOIN emotion_lvs ON emotion_lvs.id = positives.emotion_lv_id")
     .group("emotion_lvs.level").count
   end
-
   private
   def positive_params
     params.require(:positive).permit(:emotion_lv_id,:positive_context).merge(user_id: current_user.id)
