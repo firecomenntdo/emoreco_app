@@ -1,12 +1,13 @@
 <div class="positive_show_main">
   <div class="positive_show_contents">
+    <%= pie_chart @positive_ratio, width: "320px" ,colors: ["#fcdcdc", "#facfcf", "#fac3c3", "#fcbbbb", "#fca9a9", "#fc7c7c", "#fc6a6a", "#fc5b5b", "#f74545", "#fa3c3c"] %>
     <h1>ポジティブ投稿一覧</h1>
     <% @positives.each do |positive| %>
     ☺️Lv:<%= positive.emotion_lv_id %>
     <%= positive.positive_context %>
     <%= positive.created_at %>
     ⭐️tag:<%= positive.tags.map(&:name).join(', ') %>
-    <br>
+    <%= link_to '削除', positive_path(positive.id), data: { turbo_method: :delete } %><br>
     <% end %>
     <%= link_to 'もどる', positives_path, class: "header_link" %>
   </div>
